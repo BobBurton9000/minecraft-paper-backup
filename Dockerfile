@@ -1,5 +1,6 @@
 FROM alpine:3.15.4
 
+RUN apk add bash
 RUN apk add --no-cache python3 py-pip py-setuptools git ca-certificates
 
 RUN pip install python-magic \
