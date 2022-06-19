@@ -1,0 +1,15 @@
+version: "3"
+services:
+  nerdrealm-minecraft-backup:
+    container_name: nerdrealm-minecraft-backup
+    build:
+      context: .
+    volumes:
+      - type: bind
+        source: /opt/minecraft-paper-dockerised/volume
+        target: /home/minecraft
+      - type: bind
+        source: ./config
+        target: /home/backup
+    ports:
+      - "25565:25565"
